@@ -12,5 +12,8 @@ height = 640
 input_method = HiddenInputField
 
 [project]
-title = defold-vcs
+title = defold-build-number
+
+[library]
+include_dirs = defold-build-number
 

@@ -1,0 +1,15 @@
+local build_number = require "defold-build-number.build_number"
+
+
+local M = {}
+
+
+function M.on_bundle_started(opts)
+    build_number.write_version_to_game_project()
+end
+
+function M.on_build_started(opts)
+    build_number.write_version_file("main/version.lua")
+end
+
+return M

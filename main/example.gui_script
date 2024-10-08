@@ -1,0 +1,5 @@
+local v = require "main.version"
+
+function init(self)
+	gui.set_text(gui.get_node("text"), v.version)
+end

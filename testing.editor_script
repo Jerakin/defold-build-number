@@ -1,0 +1,30 @@
+local build_number = require "defold-build-number.build_number"
+
+local M = {}
+
+
+function M.get_commands()
+    return {
+        {
+            label="Echo build number",
+            locations = {"View"},
+            run = function(opts)
+                local version, error = build_number.get_version()
+                if version == nil then
+                    print(error)
+                else
+                    print("Current number is:", version)
+                end
+            end
+        },
+        {
+            label="Write version file",
+            locations = {"View"},
+            run = function(opts)
+               build_number.write_version_file("main/version.lua")
+            end
+        },
+    }
+end
+
+return M
