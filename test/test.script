@@ -1,0 +1,11 @@
+local deftest = require "deftest.deftest"
+
+local test_version = require "test.test_version"
+local test_git = require "test.test_git"
+
+function init(self)
+	deftest.add(test_version)
+	deftest.add(test_git)
+	deftest.run()
+	test()
+end

@@ -9,7 +9,7 @@ local M = {}
 ---@field dirty string Format used when there are uncommitted changes
 ---@field distance_dirty string Format used when there are both commits and uncommitted changes
 
-local _default_options = {
+M._default_options = {
 	distance = "{next_version}.dev{distance}+{vcs}{rev}",
 	dirty = "{base_version}+d{build_date}",
 	distance_dirty = "{next_version}.dev{distance}+{vcs}{rev}.d{build_date}",
@@ -36,7 +36,7 @@ end
 
 local function _merge_options(options)
 	options = options or {}
-	for key, value in pairs(_default_options) do
+	for key, value in pairs(M._default_options) do
 		if options[key] == nil then
 			options[key] = value
 		end
