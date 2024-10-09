@@ -55,9 +55,15 @@ local function format(self, options)
 	return formatted
 end
 
+local function format_version(v)
+	-- strip out all "non numbers" from the start of the version
+	local pattern = "^%D*"
+	return string.gsub(v, pattern, "")
+end
+
 function M.version(tag, distance, sha, dirty)
 	local data = {
-		base_version=tag,
+		base_version=format_version(tag),
 		distance=distance,
 		rev=sha,
 		dirty=dirty,
