@@ -1,5 +1,17 @@
 # Defold Build Number
 
+> [!NOTE]
+> The project assumes you are using [semantic versioning](https://semver.org/). If you are not following it you might get unpredictable results.
+
+Adds the suspected version from git (open to support hg and similar) into your project, through a build hook. The version can be added to your `game.project` file directly or it can create a file (`version.lua`) from which you can read the version.
+
+This is useful for both "current version", as in you want the current version in a tag, and when you are developing (have debug builds floating around).
+
+If you are on a debug build, with the latest tag `1.2.3`, you have made 5 commits since that tag, and the current commit hash is `myh4sh`, then your build version could be something like `"1.2.4.dev5+gmyh4sh"`.
+
+However, this pattern is customizable! Read about that under [Options](https://github.com/Jerakin/defold-build-number?tab=readme-ov-file#options).
+
+
 # Install
 You can use the these editor scripts in your own project by adding this project as a Defold library dependency. Open your game.project file and in the dependencies field under project add:
 
